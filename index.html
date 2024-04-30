@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Number Checker</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('https://i.pinimg.com/originals/1c/43/0f/1c430fe9830c0a7e5afbdbdb6aea95b0.gif');
+      background-size: cover;
+      background-position: center;
+      color: #000037;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+        text-align: center;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.9);
+        max-width: 500px;
+        width: 90%;
+    }
+
+    .title {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    #numberInput {
+      padding: 10px;
+      margin-right: 10px;
+      border-radius: 15px;
+      border: none;
+      outline: none;
+      text-align: center;
+      font-size: 18px;
+      width: 200px;
+    }
+
+    #checkButton {
+      padding: 10px 20px;
+      background-color: rgb(22, 0, 59);
+      border: none;
+      cursor: pointer;
+      border-radius: 25px;
+      font-size: 15px;
+      color: #ffffff;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan pada tombol */
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+
+    #byRifky {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #0e032d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Scientific Number Checker</h1>
+    <input type="text" id="numberInput" placeholder="Enter a number">
+    <br><br>
+    <button onclick="checkScientificNumber()" id="checkButton">Check</button>
+    <p id="result"></p>
+    <p id="byRifky">By Rifky Ramadhan</p>
+  </div>
+
+  <script>
+    function checkScientificNumber() {
+      var input = document.getElementById("numberInput").value;
+      var scientificRegex = /^[+-]?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i;
+
+      if (scientificRegex.test(input)) {
+        document.getElementById("result").innerHTML = input + " is a scientific number.";
+      } else {
+        document.getElementById("result").innerHTML = input + " is not a scientific number.";
+      }
+    }
+  </script>
+</body>
+</html>
